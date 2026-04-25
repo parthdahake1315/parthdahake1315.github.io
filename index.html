@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parth Dahake | CV Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+
+  /* ===== RESET & BASE ===== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #fdf6ee;
+    color: #2c1810;
+    line-height: 1.6;
+  }
+
+  a {
+    color: #a0522d;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* ===== LAYOUT ===== */
+  .cv-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+  }
+
+  /* ===== HEADER ===== */
+  .cv-header {
+    background: linear-gradient(135deg, #c8956c 0%, #a0522d 55%, #7b3a1e 100%);
+    border-radius: 20px;
+    padding: 2.5rem 2.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cv-header::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+  }
+
+  .cv-header::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 38%;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 50%;
+  }
+
+  .avatar {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    background: #f5e6d3;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #7b3a1e;
+    flex-shrink: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .header-info {
+    z-index: 1;
+  }
+
+  .header-info h1 {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #fff8f0;
+    letter-spacing: -0.5px;
+  }
+
+  .header-info .subtitle {
+    font-size: 0.95rem;
+    color: #f5d9c0;
+    margin-top: 5px;
+  }
+
+  .header-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+
+  .badge {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff8f0;
+    font-size: 0.78rem;
+    padding: 4px 14px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    font-weight: 500;
+  }
+
+  /* ===== CONTACT BAR ===== */
+  .contact-bar {
+    background: #f5e6d3;
+    border-radius: 14px;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #e8c9a8;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.84rem;
+    color: #6b3a20;
+  }
+
+  .contact-item i {
+    color: #a0522d;
+    font-size: 0.9rem;
+    width: 16px;
+    text-align: center;
+  }
+
+  /* ===== GRID LAYOUTS ===== */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .full-col {
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== SECTION CARD ===== */
+  .section-card {
+    background: #fffcf7;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid #e8c9a8;
+    height: 100%;
+  }
+
+  .section-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #9a5a30;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-bottom: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-title::before {
+    content: '';
+    width: 3px;
+    height: 14px;
+    background: #c8956c;
+    border-radius: 2px;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  /* ===== ABOUT ===== */
+  .about-text {
+    font-size: 0.91rem;
+    line-height: 1.85;
+    color: #4a2a15;
+  }
+
+  .about-text strong {
+    color: #7b3a1e;
+  }
+
+  /* ===== EDUCATION ===== */
+  .edu-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f0d9c0;
+  }
+
+  .edu-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .edu-item:first-child {
+    padding-top: 0;
+  }
+
+  .edu-item h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #2c1810;
+  }
+
+  .edu-item p {
+    font-size: 0.8rem;
+    color: #7b4a25;
+    margin-top: 3px;
+  }
+
+  .edu-item span {
+    font-size: 0.75rem;
+    color: #c8956c;
+    margin-top: 3px;
+    display: block;
+    font-weight: 500;
+  }
+
+  /* ===== SKILL BARS ===== */
+  .skill-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .skill-row:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-name {
+    font-size: 0.82rem;
+    color: #4a2a15;
+    min-width: 96px;
+  }
+
+  .skill-bar-bg {
+    flex: 1;
+    height: 6px;
+    background: #f0d9c0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #c8956c, #a0522d);
+    border-radius: 10px;
+  }
+
+  .skill-pct {
+    font-size: 0.74rem;
+    color: #9a5a30;
+    min-width: 30px;
+    text-align: right;
+    font-weight: 500;
+  }
+
+  /* ===== PROJECTS ===== */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+
+  .project-item {
+    background: #fdf0e3;
+    border-radius: 12px;
+    padding: 1rem 1.1rem;
+    border-left: 3px solid #c8956c;
+  }
+
+  .project-item h4 {
+    font-size: 0.87rem;
+    font-weight: 600;
+    color: #2c1810;
+    margin-bottom: 5px;
+  }
+
+  .project-item p {
+    font-size: 0.79rem;
+    color: #6b3a20;
+    line-height: 1.6;
+  }
+
+  .project-tech {
+    font-size: 0.71rem;
+    color: #9a5a30;
+    margin-top: 8px;
+    background: #f5e6d3;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 500;
+    border: 1px solid #e0c4a0;
+  }
+
+  /* ===== CERT ITEMS ===== */
+  .cert-item {
+    background: #fdf0e3;
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.65rem;
+    border: 1px solid #e8c9a8;
+  }
+
+  .cert-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .cert-item h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2c1810;
+  }
+
+  .cert-item p {
+    font-size: 0.78rem;
+    color: #7b4a25;
+    margin-top: 3px;
+  }
+
+  /* ===== LIST ITEMS (achievements, activities) ===== */
+  .list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid #f0d9c0;
+    font-size: 0.85rem;
+    color: #4a2a15;
+    line-height: 1.6;
+  }
+
+  .list-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .list-item:first-child {
+    padding-top: 0;
+  }
+
+  .list-dot {
+    width: 7px;
+    height: 7px;
+    background: #c8956c;
+    border-radius: 50%;
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+
+  /* ===== TAGS ===== */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0.6rem;
+  }
+
+  .tag {
+    background: #f5e6d3;
+    color: #7b3a1e;
+    font-size: 0.76rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    border: 1px solid #e0c4a0;
+    font-weight: 500;
+  }
+
+  /* ===== SOCIAL LINKS ===== */
+  .social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5e6d3;
+    color: #7b3a1e;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: 1px solid #e0c4a0;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .social-btn:hover {
+    background: #a0522d;
+    color: #fff8f0;
+    text-decoration: none;
+  }
+
+  .social-btn i {
+    font-size: 0.9rem;
+  }
+
+  /* ===== DIVIDER ===== */
+  .section-divider {
+    border: none;
+    border-top: 1px solid #e8c9a8;
+    margin: 1.2rem 0;
+  }
+
+  /* ===== FOOTER ===== */
+  .cv-footer {
+    text-align: center;
+    padding: 1.2rem;
+    font-size: 0.78rem;
+    color: #9a6a45;
+    border-top: 1px solid #e8c9a8;
+    margin-top: 1rem;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 700px) {
+    .two-col,
+    .three-col,
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cv-header {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .header-badges {
+      justify-content: center;
+    }
+
+    .contact-bar {
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .header-info h1 {
+      font-size: 1.7rem;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="cv-wrapper">
+
+  <!-- ===== HEADER ===== -->
+  <div class="cv-header">
+    <div class="avatar">
+      <img src="dahake.png" alt="Parth Dahake" onerror="this.style.display='none'; this.parentElement.innerHTML='PD';">
+    </div>
+    <div class="header-info">
+      <h1>Parth Dahake</h1>
+      <div class="subtitle">B.Tech Computer Engineering &nbsp;·&nbsp; MIT Academy of Engineering, Alandi, Pune</div>
+      <div class="header-badges">
+        <span class="badge">Class of 2029</span>
+        <span class="badge">Web Developer</span>
+        <span class="badge">Python Enthusiast</span>
+        <span class="badge">State-Level Athlete</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT BAR ===== -->
+  <div class="contact-bar">
+    <div class="contact-item"><i class="fas fa-phone"></i> 8484925819</div>
+    <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:parthdahake1315@gmail.com">parthdahake1315@gmail.com</a></div>
+    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Alandi, Pune, Maharashtra</div>
+    <div class="contact-item"><i class="fab fa-github"></i> <a href="https://github.com/parthdahake1315/PARTH-.git" target="_blank">github.com/parthdahake1315</a></div>
+    <div class="contact-item"><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/parth-dahake-664766386" target="_blank">linkedin.com/in/parth-dahake</a></div>
+  </div>
+
+  <!-- ===== ABOUT ME ===== -->
+  <div class="full-col">
+    <div class="section-card">
+      <div class="section-title">About Me</div>
+      <p class="about-text">
+        Hello, I'm <strong>Parth Dahake</strong>, a first-year B.Tech Computer Engineering student at MIT Academy of Engineering, Alandi, Pune. I have a strong passion for technology and software development. I enjoy learning programming languages, building projects, and improving my problem-solving skills. I am continuously exploring new tools and technologies to grow as a developer — and I bring the same discipline from athletics into everything I pursue.
+      </p>
+    </div>
+  </div>
+
+  <!-- ===== EDUCATION + TECHNICAL SKILLS ===== -->
+  <div class="two-col">
+
+    <div class="section-card">
+      <div class="section-title">Education</div>
+      <div class="edu-item">
+        <h4>B.Tech — Computer Engineering</h4>
+        <p>MIT Academy of Engineering, Alandi, Pune</p>
+        <span>2025 – 2029</span>
+      </div>
+      <div class="edu-item">
+        <h4>Higher Secondary (Class XII)</h4>
+        <p>New Arts, Commerce & Science Junior College, Wardha</p>
+        <span>Passed Out: 2025</span>
+      </div>
+      <div class="edu-item">
+        <h4>Secondary (Class X)</h4>
+        <p>School of Scholars, Sawangi, Wardha, Maharashtra</p>
+        <span>Passed Out: 2023</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">Technical Skills</div>
+      <div class="skill-row">
+        <span class="skill-name">C</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+        <span class="skill-pct">80%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Python</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+        <span class="skill-pct">75%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">HTML</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">CSS</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+        <span class="skill-pct">80%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">JavaScript</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+        <span class="skill-pct">70%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">VS Code</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">GitHub</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+        <span class="skill-pct">70%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Canva</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+        <span class="skill-pct">80%</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== PROJECTS ===== -->
+  <div class="full-col">
+    <div class="section-card">
+      <div class="section-title">Projects</div>
+      <div class="projects-grid">
+        <div class="project-item">
+          <h4>Personal Portfolio Website</h4>
+          <p>Responsive personal portfolio designed and developed from scratch with animations and clean UI.</p>
+          <span class="project-tech">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript</span>
+        </div>
+        <div class="project-item">
+          <h4>Calculator App</h4>
+          <p>A clean calculator that performs basic arithmetic operations with a minimal, user-friendly interface.</p>
+          <span class="project-tech">HTML &nbsp;·&nbsp; CSS &nbsp;·&nbsp; JavaScript</span>
+        </div>
+        <div class="project-item">
+          <h4>Number Guessing Game</h4>
+          <p>Interactive game where users guess a random number with hints — built using Python logic.</p>
+          <span class="project-tech">Python</span>
+        </div>
+        <div class="project-item">
+          <h4>Student Management System</h4>
+          <p>Menu-driven program to add, remove, and display student records with structured data management.</p>
+          <span class="project-tech">Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SOFT SKILLS + TOOLS ===== -->
+  <div class="two-col">
+
+    <div class="section-card">
+      <div class="section-title">Soft Skills</div>
+      <div class="skill-row">
+        <span class="skill-name">Communication</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+        <span class="skill-pct">85%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Teamwork</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+        <span class="skill-pct">90%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Problem Solving</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+        <span class="skill-pct">80%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Time Mgmt.</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+        <span class="skill-pct">75%</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-name">Adaptability</span>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+        <span class="skill-pct">80%</span>
+      </div>
+
+      <hr class="section-divider">
+
+      <div class="section-title">Tools</div>
+      <div class="tags">
+        <span class="tag">MS Word</span>
+        <span class="tag">MS Excel</span>
+        <span class="tag">VS Code</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">Canva</span>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">Certifications</div>
+      <div class="cert-item">
+        <h4>MS-CIT Certification</h4>
+        <p>Maharashtra State Certificate in Information Technology</p>
+      </div>
+      <div class="cert-item">
+        <h4>Basic Programming Course</h4>
+        <p>Introduction to programming concepts and logic building</p>
+      </div>
+      <div class="cert-item">
+        <h4>Web Development Workshop</h4>
+        <p>Hands-on training in modern web technologies</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== ACHIEVEMENTS + ACTIVITIES ===== -->
+  <div class="two-col">
+
+    <div class="section-card">
+      <div class="section-title">Achievements</div>
+      <div class="list-item"><div class="list-dot"></div> Represented at State Level in Athletics</div>
+      <div class="list-item"><div class="list-dot"></div> Participated in coding competitions and technical events</div>
+      <div class="list-item"><div class="list-dot"></div> Completed multiple courses to enhance technical skills</div>
+      <div class="list-item"><div class="list-dot"></div> Active participation in academic and extracurricular activities</div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-title">Activities & Interests</div>
+      <div class="list-item"><div class="list-dot"></div> Active involvement in athletics and regular sports training</div>
+      <div class="list-item"><div class="list-dot"></div> Maintaining fitness and discipline through daily practice</div>
+      <div class="list-item"><div class="list-dot"></div> Building web development and Python projects</div>
+      <div class="list-item"><div class="list-dot"></div> Exploring new technologies and continuous self-learning</div>
+    </div>
+
+  </div>
+
+  <!-- ===== CONTACT + LINKS ===== -->
+  <div class="full-col">
+    <div class="section-card">
+      <div class="section-title">Connect With Me</div>
+      <div class="social-links">
+        <a href="https://github.com/parthdahake1315/PARTH-.git" target="_blank" class="social-btn">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/parth-dahake-664766386" target="_blank" class="social-btn">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="mailto:parthdahake1315@gmail.com" class="social-btn">
+          <i class="fas fa-envelope"></i> Email Me
+        </a>
+        <a href="tel:8484925819" class="social-btn">
+          <i class="fas fa-phone"></i> Call
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="cv-footer">
+    © 2026 Parth Dahake &nbsp;·&nbsp; Alandi, Pune, Maharashtra &nbsp;·&nbsp; All rights reserved
+  </div>
+
+</div>
+</body>
+</html>
